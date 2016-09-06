@@ -27,13 +27,13 @@ var perfmonLogged 		= readCookie('perfmonLogged');
 var perfmonVisitorId 	= readCookie('perfmonVisitorId');
 
 if (!perfmonLogged) {
-	//createCookie('perfmonLogged','true',1);
+	createCookie('perfmonLogged','true',1);
 
 	// Read visitorID cookie
 	if (!perfmonVisitorId) {
 		var visitorId = Math.floor(Math.random()*1023422343231);
 		visitorId.toString();
-		//createCookie('perfmonVisitorId', visitorId, 1825);
+		createCookie('perfmonVisitorId', visitorId, 1825);
 		recordTiming(visitorId);
 	} else {
 		perfmonVisitorId = Number(perfmonVisitorId);
