@@ -1,3 +1,5 @@
+![Screenshot](https://raw.githubusercontent.com/jacted/perf-mon/master/example/screenshot1.png)
+
 ## Introduction
 
 - Website performance monitor for slack using ```performance.timing```
