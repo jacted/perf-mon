@@ -3,6 +3,7 @@
 ## Introduction
 
 - Website performance monitor for slack using ```performance.timing```
+- Messages will be posted to #general (Remember to invite bot)
 
 ## Getting started
 
@@ -15,7 +16,7 @@ npm install
 ```
 Add slack bot ```https://my.slack.com/services/new/bot```
 
-Edit config.example.js and rename to config.js
+Edit app/config.example.js and rename to app/config.js
 
 Insert script tags at the bottom of your website right before </body>
 
@@ -25,4 +26,8 @@ Insert script tags at the bottom of your website right before </body>
 </script>
 <script type="text/javascript" src="http://localhost:8080/perfmon.js" defer></script>
 ```
+Invite bot to #general
 
+## Commands
+- ```perf help``` shows explanations
+- ```perf report``` shows report
