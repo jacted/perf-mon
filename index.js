@@ -8,7 +8,6 @@ var express 	= require('express'),
 	CronJob 	= require('cron').CronJob,
 	SlackBot 	= require('slackbots'),
 	config 		= require('./app/config'),
-	Log 		= require('./app/models/log'),
 	slack 		= require('./app/slack');
 
 // Setup Mongoose 
@@ -34,7 +33,8 @@ app.use(express.static('script'));
 var bot = new SlackBot(config.slack);
 
 bot.on('error', function(err) {
-	console.log("error upps", err);
+    console.log("Connection closed... Reconnecting.")
+	bot.login();
 });
 
 bot.on('message', function(data) {
