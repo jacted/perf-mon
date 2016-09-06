@@ -2,10 +2,15 @@
 
 ## Introduction
 
-- Website performance reports for slack using ```performance.timing```
+- Website performance reports for slack
+- Captures performance stats using ```performance.timing``` 
 - Messages will be posted to #general (Can be changed in config, remember to invite bot)
-- Uses MongoDB, get a free one on mlab.com
 - Discuss on [Hacker News](https://news.ycombinator.com/item?id=12438895)
+
+## Stack
+
+> - NodeJS
+> - MongoDB (Get one free at mlab.com)
 
 ## Getting started
 
