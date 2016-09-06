@@ -43,10 +43,10 @@ bot.on('message', function(data) {
 	if(data.type == "message") {
 
 		switch(data.text) {
-			case 'perf report':
+			case 'speed report':
 				slack.sendReport(bot);
 			break;
-			case 'perf help':
+			case 'speed help':
 				slack.sendHelp(bot);
 			break;
 		}

@@ -33,8 +33,8 @@ Invite bot to #general (or the one set in the config)
 Run ```node index.js``` (or use something like pm2)
 
 ## Commands
-- ```perf help``` shows explanations
-- ```perf report``` shows report
+- ```speed help``` shows explanations
+- ```speed report``` shows report
 
 ## ToDo
 
