@@ -154,7 +154,7 @@ var sendReport = (bot) => {
 		};
  
 
-		bot.postMessageToChannel('general', '', params).then((data) => {
+		bot.postMessageToChannel(config.slack.channel, '', params).then((data) => {
 		});
 
 	});
@@ -209,7 +209,7 @@ var sendHelp = (bot) => {
 			])
 	}
 
-	bot.postMessageToChannel('general', '', params).then((data) => {
+	bot.postMessageToChannel(config.slack.channel, '', params).then((data) => {
 	});
  
 }

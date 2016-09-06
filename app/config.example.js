@@ -10,7 +10,8 @@ var config = {
 	},
 	slack: {
 		token: 'xoxb-TOKEN',
-		name: 'perf-mon'
+		name: 'perf-mon',
+		channel: 'general'
 	},
 	db: 'mongodb://username:password@host:port/database'
 };
