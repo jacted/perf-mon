@@ -10,7 +10,7 @@ var config = {
 	},
 	slack: {
 		token: 'xoxb-TOKEN',
-		name: 'perf-mon',
+		name: 'Speed Monitor',
 		channel: 'general'
 	},
 	db: 'mongodb://username:password@host:port/database'
