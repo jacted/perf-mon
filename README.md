@@ -2,8 +2,9 @@
 
 ## Introduction
 
-- Website performance monitor for slack using ```performance.timing```
+- Website performance reports for slack using ```performance.timing```
 - Messages will be posted to #general (Remember to invite bot)
+- Uses MongoDB, get a free one on mlab.com
 
 ## Getting started
 
