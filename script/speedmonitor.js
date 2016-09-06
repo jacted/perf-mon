@@ -23,28 +23,28 @@ function readCookie(name) {
 }
 
 // Read cookie
-var perfmonLogged 		= readCookie('perfmonLogged');
-var perfmonVisitorId 	= readCookie('perfmonVisitorId');
+var speedmonitorLogged 		= readCookie('speedmonitorLogged');
+var speedmonitorVisitorId 	= readCookie('speedmonitorVisitorId');
 
-if (!perfmonLogged) {
-	createCookie('perfmonLogged','true',1);
+if (!speedmonitorLogged) {
+	createCookie('speedmonitorLogged','true',1);
 
 	// Read visitorID cookie
-	if (!perfmonVisitorId) {
+	if (!speedmonitorVisitorId) {
 		var visitorId = Math.floor(Math.random()*1023422343231);
 		visitorId.toString();
-		createCookie('perfmonVisitorId', visitorId, 1825);
+		createCookie('speedmonitorVisitorId', visitorId, 1825);
 		recordTiming(visitorId);
 	} else {
-		perfmonVisitorId = Number(perfmonVisitorId);
-		recordTiming(perfmonVisitorId);
+		speedmonitorVisitorId = Number(speedmonitorVisitorId);
+		recordTiming(speedmonitorVisitorId);
 	}
 
 }
 
 function recordTiming(visitorId) {
 
-	var device, perfmonUxMonitorData;
+	var device, speedmonitorUxMonitorData;
 
 	// Detect Mobile or Desktop
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -55,19 +55,19 @@ function recordTiming(visitorId) {
 
 	if (performance && performance.timing) {
 		
-		perfmonUxMonitorData = {};
-		perfmonUxMonitorData.version 		= '1.0.0';
-		perfmonUxMonitorData.siteDomainName = window.location;
-		perfmonUxMonitorData.visitorId 		= visitorId;
-		perfmonUxMonitorData.userAgent 		= navigator.userAgent;
-		perfmonUxMonitorData.device 		= device;
-		perfmonUxMonitorData.performance 	= performance.timing;
+		speedmonitorUxMonitorData = {};
+		speedmonitorUxMonitorData.version 			= '1.0.0';
+		speedmonitorUxMonitorData.siteDomainName 	= window.location;
+		speedmonitorUxMonitorData.visitorId 		= visitorId;
+		speedmonitorUxMonitorData.userAgent 		= navigator.userAgent;
+		speedmonitorUxMonitorData.device 			= device;
+		speedmonitorUxMonitorData.performance 		= performance.timing;
 
 		window.addEventListener('unload', logData, false);
 
 		function logData() {
-			var blob = new Blob([JSON.stringify(perfmonUxMonitorData)], {type : 'application/json; charset=UTF-8'});
-			navigator.sendBeacon(perfmonUxMonitorBeaconUrl, blob);
+			var blob = new Blob([JSON.stringify(speedmonitorUxMonitorData)], {type : 'application/json; charset=UTF-8'});
+			navigator.sendBeacon(speedmonitorUxMonitorBeaconUrl, blob);
 		}
 
 	}

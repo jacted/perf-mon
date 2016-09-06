@@ -11,9 +11,9 @@
   "author": "Jacob",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jacted/perf-mon/issues"
+    "url": "https://github.com/jacted/speed-monitor/issues"
   },
-  "homepage": "https://github.com/jacted/perf-mon#readme",
+  "homepage": "https://github.com/jacted/speed-monitor#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
