@@ -1,0 +1,25 @@
+{
+  "name": "perf-mon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacted/perf-mon.git"
+  },
+  "author": "Jacob",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacted/perf-mon/issues"
+  },
+  "homepage": "https://github.com/jacted/perf-mon#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "cron": "^1.1.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0",
+    "slackbots": "^0.5.2"
+  }
+}
