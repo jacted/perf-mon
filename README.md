@@ -9,28 +9,30 @@
 
 ## Getting started
 
-Clone repository
+1. Clone repository
 
-Use npm to install dependencies:
+2. Use npm to install dependencies:
 
-```
-npm install
-```
-Add slack bot ```https://my.slack.com/services/new/bot```
+	```
+	npm install
+	```
 
-Edit app/config.example.js and rename to app/config.js
+3. Add slack bot ```https://my.slack.com/services/new/bot```
 
-Insert script tags at the bottom of your website right before </body>
+4. Edit app/config.example.js and rename to app/config.js
 
-```
-<script type="text/javascript">
-	var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
-</script>
-<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
-```
-Invite bot to #general (or the one set in the config)
+5. Insert script tags at the bottom of your website right before </body>
 
-Run ```node index.js``` (or use something like pm2)
+	```
+	<script type="text/javascript">
+		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
+	</script>
+	<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
+	```
+
+6. Invite bot to #general (or the one set in the config)
+
+7. Run ```node index.js``` (or use something like pm2)
 
 ## Commands
 - ```speed help``` shows explanations
@@ -40,7 +42,8 @@ Run ```node index.js``` (or use something like pm2)
 
 - [ ] Multiple domain support
 - [ ] Clean up code
-- [ ] Better readme.md
+- [ ] Better README.md
+- [ ] Multiple database options
 
 ## License
 The MIT License (MIT)
