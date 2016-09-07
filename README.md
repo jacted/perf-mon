@@ -48,9 +48,9 @@
 
 - [ ] Multiple domain support
 - [ ] Clean up code
-- [ ] Better README.md
 - [ ] Multiple database options
 - [ ] Add more commands
+- [X] Better README.md
 
 ## License
 The MIT License (MIT)
