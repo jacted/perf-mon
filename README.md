@@ -6,6 +6,7 @@
 - Captures performance stats using ```performance.timing``` 
 - Messages will be posted to #general (Can be changed in config, remember to invite bot)
 - Discuss on [Hacker News](https://news.ycombinator.com/item?id=12438895)
+- This is NOT a NodeJS package.
 
 ## Stack
 
