@@ -4,7 +4,7 @@
 
 - Website performance reports for slack
 - Captures performance stats using ```performance.timing``` 
-- Messages will be posted to #general (Can be changed in config, remember to invite bot)
+- Messages will be posted to default channel (config.slack.channel) or the channel where the message came from, including users.
 - Discuss on [Hacker News](https://news.ycombinator.com/item?id=12438895)
 - This is NOT a NodeJS package.
 
