@@ -26,7 +26,7 @@
 
 4. Edit app/config.example.js and rename to app/config.js
 
-5. Insert script tags at the bottom of your website right before </body>
+5. Insert script tags at the bottom of your website right before ```</body>```
 
 	```
 	<script type="text/javascript">
@@ -49,6 +49,7 @@
 - [ ] Clean up code
 - [ ] Better README.md
 - [ ] Multiple database options
+- [ ] Add more commands
 
 ## License
 The MIT License (MIT)
