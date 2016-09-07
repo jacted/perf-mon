@@ -1,7 +1,7 @@
 var Log     = require('./models/log'),
  	config  = require('./config'); 
 
-var sendReport = (bot) => {
+var sendReport = (bot, channel) => {
 
 	// Domain
 	let domain = config.stats.domain;
@@ -154,24 +154,32 @@ var sendReport = (bot) => {
 		};
  
 
-		bot.postMessageToChannel(config.slack.channel, '', params).then((data) => {
-		});
+		// Channel
+		if(typeof channel == "undefined") {
+			channel = config.slack.channel;
+			bot.postMessageToChannel(channel, '', params).then((data) => {
+			});
+		} else {
+			bot.postMessage(channel, '', params).then((data) => {
+			});
+		}
+
 
 	});
 
 }
 
-var sendHelp = (bot) => {
+var sendHelp = (bot, channel) => {
 
 	// Bot params
 	var params = {
 		icon_emoji: ':robot_face:',
 			attachments: JSON.stringify([
 				{
-					"fallback": "Perf-mon help",
+					"fallback": "Speed Monitor help",
 					"color": "#36a64f",
-					"title": "Perf-mon help",
-					"text": "Perf-mon explained",
+					"title": "Speed Monitor help",
+					"text": "Speed Monitor explained",
 					"fields": [
 						{
 							"title": "Load Complete",
@@ -209,8 +217,15 @@ var sendHelp = (bot) => {
 			])
 	}
 
-	bot.postMessageToChannel(config.slack.channel, '', params).then((data) => {
-	});
+	// Channel
+	if(typeof channel == "undefined") {
+		channel = config.slack.channel;
+		bot.postMessageToChannel(channel, '', params).then((data) => {
+		});
+	} else {
+		bot.postMessage(channel, '', params).then((data) => {
+		});
+	}
  
 }
 

@@ -39,15 +39,16 @@ bot.on('error', function(err) {
 
 bot.on('message', function(data) {
 
+
 	// Commands on message
 	if(data.type == "message") {
 
 		switch(data.text) {
 			case 'speed report':
-				slack.sendReport(bot);
+				slack.sendReport(bot, data.channel);
 			break;
 			case 'speed help':
-				slack.sendHelp(bot);
+				slack.sendHelp(bot, data.channel);
 			break;
 		}
 
