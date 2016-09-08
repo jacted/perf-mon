@@ -1,4 +1,6 @@
-![Screenshot](https://raw.githubusercontent.com/jacted/perf-mon/master/example/screenshot1.png)
+![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot1.png)
+
+More screenshots in ```examples/```
 
 ## Introduction
 
