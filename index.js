@@ -47,6 +47,9 @@ bot.on('message', function(data) {
 			case 'speed report':
 				slack.sendReport(bot, data.channel);
 			break;
+			case 'speed report full':
+				slack.sendReport(bot, data.channel, true);
+			break;
 			case 'speed help':
 				slack.sendHelp(bot, data.channel);
 			break;

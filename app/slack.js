@@ -1,7 +1,7 @@
 var Log     = require('./models/log'),
  	config  = require('./config'); 
 
-var sendReport = (bot, channel) => {
+var sendReport = (bot, channel, full) => {
 
 	// Domain
 	let domain = config.stats.domain;
@@ -17,32 +17,38 @@ var sendReport = (bot, channel) => {
 			load_time: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0,
+				full: ''
 			},
 			dns: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0,
+				full: '',
 			},
 			latency: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0,
+				full: ''
 			},
 			transfer: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0, 
+				full: ''
 			},
 			dom_to_interactive: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0,
+				full: ''
 			},
 			interactive_to_completed: {
 				avg: 0,
 				min: 0,
-				max: 0
+				max: 0,
+				full: ''
 			}
 		}
 
@@ -85,18 +91,26 @@ var sendReport = (bot, channel) => {
 
     		// Make values
 			var obj = final[key];
-			for (let prop in obj) {
+			for (let prop in obj) { 
 				if(!obj.hasOwnProperty(prop)) continue;
 
-				// IF values is more than 1000, it's seconds
-				if(obj[prop] > 1000) {
+				// Add to full string
+				if(prop != "full") {
 
-					final[key][prop] = (obj[prop]/1000)+'s';
+					// IF values is more than 1000, it's seconds
+					if(obj[prop] > 1000) {
 
-				} else {
+						final[key][prop] = (obj[prop]/1000)+'s';
 
-					// It's milliseconds
-					final[key][prop] = obj[prop]+'ms';
+					} else {
+
+						// It's milliseconds
+						final[key][prop] = obj[prop]+'ms';
+
+					}
+
+					let prefix = (final[key].full == "") ? '' : ' - ';
+					final[key].full += prefix+(prop.charAt(0).toUpperCase() + prop.slice(1))+': '+final[key][prop];
 
 				}
 
@@ -112,39 +126,39 @@ var sendReport = (bot, channel) => {
 			icon_emoji: ':robot_face:',
 			attachments: JSON.stringify([
 				{
-					"fallback": msgText,
+					"fallback": msgText, 
 					"color": "#36a64f",
 					"title": "Performance report for "+domain,
 					"text": msgText,
 					"fields": [
 						{
 							"title": "Load Complete",
-							"value": final.load_time.avg,
+							"value": (full) ? final.load_time.full : final.load_time.avg,
 							"short": true
 						},
 						{
 							"title": "DNS",
-							"value": final.dns.avg,
+							"value": (full) ? final.dns.full : final.dns.avg,
 							"short": true
 						},
 						{
 							"title": "Dom To Interactive",
-							"value": final.dom_to_interactive.avg,
+							"value": (full) ? final.dom_to_interactive.full : final.dom_to_interactive.avg,
 							"short": true
 						},
 						{
 							"title": "Interactive To Completed",
-							"value": final.interactive_to_completed.avg,
+							"value": (full) ? final.interactive_to_completed.full : final.interactive_to_completed.avg,
 							"short": true
 						},
 						{
 							"title": "Latency",
-							"value": final.latency.avg,
+							"value": (full) ? final.latency.full : final.latency.avg,
 							"short": true
 						},
 						{
 							"title": "Transfer",
-							"value": final.transfer.avg,
+							"value": (full) ? final.transfer.full : final.transfer.avg,
 							"short": true
 						}
 					],
