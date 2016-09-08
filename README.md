@@ -43,6 +43,7 @@
 ## Commands
 - ```speed help``` shows explanations
 - ```speed report``` shows report
+- ```speed report full``` shows extended report
 
 ## ToDo
 
