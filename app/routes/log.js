@@ -26,7 +26,7 @@ module.exports = function(app){
 			let loadTime 				= performance.domContentLoadedEventEnd - performance.navigationStart;
 
 			// DNS
-			let dns 					= performance.domainLookupStart - performance.domainLookupEnd;
+			let dns 					= performance.domainLookupEnd - performance.domainLookupStart;
 			if(dns < 0) {
 				dns = 0;
 			}
