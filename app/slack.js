@@ -1,3 +1,5 @@
+'use strict'
+
 var Log     = require('./models/log'),
  	config  = require('./config'); 
 
@@ -100,12 +102,12 @@ var sendReport = (bot, channel, full) => {
 					// IF values is more than 1000, it's seconds
 					if(obj[prop] > 1000) {
 
-						final[key][prop] = (obj[prop]/1000)+'s';
+						final[key][prop] = (obj[prop]/1000).toFixed(2)+'s';
 
 					} else {
 
 						// It's milliseconds
-						final[key][prop] = obj[prop]+'ms';
+						final[key][prop] = obj[prop].toFixed(2)+'ms';
 
 					}
 
@@ -134,32 +136,32 @@ var sendReport = (bot, channel, full) => {
 						{
 							"title": "Load Complete",
 							"value": (full) ? final.load_time.full : final.load_time.avg,
-							"short": true
+							"short": (full) ? false : true
 						},
 						{
 							"title": "DNS",
 							"value": (full) ? final.dns.full : final.dns.avg,
-							"short": true
+							"short": (full) ? false : true
 						},
 						{
 							"title": "Dom To Interactive",
 							"value": (full) ? final.dom_to_interactive.full : final.dom_to_interactive.avg,
-							"short": true
+							"short": (full) ? false : true
 						},
 						{
 							"title": "Interactive To Completed",
 							"value": (full) ? final.interactive_to_completed.full : final.interactive_to_completed.avg,
-							"short": true
+							"short": (full) ? false : true
 						},
 						{
 							"title": "Latency",
 							"value": (full) ? final.latency.full : final.latency.avg,
-							"short": true
+							"short": (full) ? false : true
 						},
 						{
 							"title": "Transfer",
 							"value": (full) ? final.transfer.full : final.transfer.avg,
-							"short": true
+							"short": (full) ? false : true
 						}
 					],
 					"ts": Math.round(new Date().getTime()/1000)

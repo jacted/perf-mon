@@ -1,3 +1,5 @@
+'use strict'
+
 var config = {
 	date: {
 		timezone: 'Europe/Berlin'
@@ -6,7 +8,7 @@ var config = {
 		domain: 'localhost'
 	},
 	web: {
-		port: process.env.WEB_PORT || 8080
+		port: process.env.PORT || 8080
 	},
 	slack: {
 		token: 'xoxb-TOKEN',

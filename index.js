@@ -1,3 +1,5 @@
+'use strict'
+
 // BASE SETUP 
 // ====================================================
 var express 	= require('express'),

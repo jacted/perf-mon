@@ -1,3 +1,5 @@
+
+'use strict'
 var Log     = require('../models/log'),
  	config  = require('../config'); 
 
