@@ -1,14 +1,16 @@
-![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot1.png)
+## Speed Monitor
 
-More screenshots in ```examples/```
-
-## Introduction
-
-- Website performance reports for slack
+- Website user performance reports for slack
 - Captures performance stats using ```performance.timing``` 
-- Messages will be posted to default channel (config.slack.channel) or the channel where the message came from, including users.
-- Discuss on [Hacker News](https://news.ycombinator.com/item?id=12438895)
 - This is NOT a NodeJS package.
+
+## What does it do?
+
+The script captures the users performance using ```performance.timing```
+
+It then sends it to a NodeJS server, storing it in MongoDB and sends reports to slack about the performance.
+
+![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot1.png)
 
 ## Stack
 
@@ -38,9 +40,11 @@ More screenshots in ```examples/```
 	<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
 	```
 
-6. Invite bot to #general (or the one set in the config)
+6. Run ```node index.js``` (or use something like pm2)
 
-7. Run ```node index.js``` (or use something like pm2)
+7. Invite bot to any channel
+
+8. Use commands in any channel joined by the bot
 
 ## Commands
 - ```speed help``` shows explanations
@@ -51,9 +55,16 @@ More screenshots in ```examples/```
 
 - [ ] Multiple domain support
 - [ ] Clean up code
-- [ ] Multiple database options
-- [ ] Add more commands
-- [X] Better README.md
+
+## Browser support
+
+Any browser that supports `performance.timing()`! Chrome, Firefox, Safari 9.2+, Edge, IE 9+, Android Browser 4.4, UC Browser.
+
+See [caniuse.com](http://caniuse.com/#feat=nav-timing) for full support.
+
+## Screenshots
+
+![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot2.png)
 
 ## License
 The MIT License (MIT)
