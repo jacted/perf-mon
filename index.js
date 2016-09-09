@@ -8,9 +8,7 @@ var express 	= require('express'),
 	cors 		= require('cors'),
 	mongoose   	= require('mongoose'),
 	CronJob 	= require('cron').CronJob,
-	SlackBot 	= require('slackbots'),
-	config 		= require('./app/config'),
-	slack 		= require('./app/slack');
+	config 		= require('./app/config')
 
 // Setup Mongoose 
 // ====================================================
@@ -33,33 +31,7 @@ app.use(express.static('script'));
 // Setup Slack Bot
 // ====================================================
 if(config.slack.enabled) {
-	var bot = new SlackBot(config.slack);
-
-	bot.on('error', function(err) {
-	    console.log("Connection closed... Reconnecting.")
-		bot.login();
-	});
-	 
-	bot.on('message', function(data) {
-
-		// Commands on message
-		if(data.type == "message") {
-
-			switch(data.text) {
-				case 'speed report':
-					slack.sendReport(bot, data.channel);
-				break;
-				case 'speed report full':
-					slack.sendReport(bot, data.channel, true);
-				break;
-				case 'speed help':
-					slack.sendHelp(bot, data.channel);
-				break;
-			}
-
-		}
-
-	});
+	require('./app/routes/slack')(app);
 }
 
 // Rocket chat
@@ -75,7 +47,7 @@ require('./app/routes/log')(app);
 // Setup cronjob (00:08:00)
 // ====================================================
 new CronJob('00 08 00 * * *', function() {
-  slack.sendReport(bot);
+  
 }, null, true, config.date.timezone);
 
 // Start server
