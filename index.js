@@ -32,34 +32,41 @@ app.use(express.static('script'));
 
 // Setup Slack Bot
 // ====================================================
-var bot = new SlackBot(config.slack);
+if(config.slack.enabled) {
+	var bot = new SlackBot(config.slack);
 
-bot.on('error', function(err) {
-    console.log("Connection closed... Reconnecting.")
-	bot.login();
-});
+	bot.on('error', function(err) {
+	    console.log("Connection closed... Reconnecting.")
+		bot.login();
+	});
+	 
+	bot.on('message', function(data) {
 
-bot.on('message', function(data) {
+		// Commands on message
+		if(data.type == "message") {
 
+			switch(data.text) {
+				case 'speed report':
+					slack.sendReport(bot, data.channel);
+				break;
+				case 'speed report full':
+					slack.sendReport(bot, data.channel, true);
+				break;
+				case 'speed help':
+					slack.sendHelp(bot, data.channel);
+				break;
+			}
 
-	// Commands on message
-	if(data.type == "message") {
-
-		switch(data.text) {
-			case 'speed report':
-				slack.sendReport(bot, data.channel);
-			break;
-			case 'speed report full':
-				slack.sendReport(bot, data.channel, true);
-			break;
-			case 'speed help':
-				slack.sendHelp(bot, data.channel);
-			break;
 		}
 
-	}
+	});
+}
 
-});
+// Rocket chat
+// ====================================================
+if(config.rocketchat.enabled) {
+	require('./app/routes/rocketchat')(app);
+}
 
 // Log post
 // ====================================================

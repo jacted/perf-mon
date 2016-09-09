@@ -1,6 +1,6 @@
 ## Speed Monitor
 
-- Website user performance reports for slack
+- Website user performance reports for slack and Rocket.chat
 - Captures performance stats using ```performance.timing``` 
 - This is NOT a NodeJS package.
 
@@ -8,7 +8,7 @@
 
 The script captures the users performance using ```performance.timing```
 
-It then sends it to a NodeJS server, storing it in MongoDB and sends reports to slack about the performance.
+It then sends it to a NodeJS server, storing it in MongoDB and sends reports to slack or Rocket.chat about the performance.
 
 ![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot1.png)
 
@@ -17,7 +17,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 > - NodeJS
 > - MongoDB (Get one free at mlab.com)
 
-## Getting started
+## Getting started slack
 
 1. Clone repository
 
@@ -45,6 +45,33 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 7. Invite bot to any channel
 
 8. Use commands in any channel joined by the bot
+
+## Getting started Rocket.chat
+
+1. Clone repository
+
+2. Use npm to install dependencies:
+
+	```
+	npm install
+	```
+
+3. Add Outgoing WebHook Integration to Rocket.chat `url: http://localhost:8080/rocketchat`
+
+4. Edit app/config.example.js and rename to app/config.js
+
+5. Insert script tags at the bottom of your website right before ```</body>```
+
+	```
+	<script type="text/javascript">
+		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
+	</script>
+	<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
+	```
+
+6. Run ```node index.js``` (or use something like pm2)
+
+7. Use commands in any channel
 
 ## Commands
 - ```speed help``` shows explanations
