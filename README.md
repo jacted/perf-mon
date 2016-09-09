@@ -27,11 +27,13 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 	npm install
 	```
 
-3. Add slack bot ```https://my.slack.com/services/new/bot```
+3. Add Outgoing WebHook Integration to Slack ```https://my.slack.com/services/new/outgoing-webhook```
 
-4. Edit app/config.example.js and rename to app/config.js
+4. Slack WebHook url `http://localhost:8080/slack` - Add `speed` to trigger word(s)
 
-5. Insert script tags at the bottom of your website right before ```</body>```
+5. Edit app/config.example.js and rename to app/config.js
+
+6. Insert script tags at the bottom of your website right before ```</body>```
 
 	```
 	<script type="text/javascript">
@@ -40,11 +42,9 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 	<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
 	```
 
-6. Run ```node index.js``` (or use something like pm2)
+7. Run ```node index.js``` (or use something like pm2)
 
-7. Invite bot to any channel
-
-8. Use commands in any channel joined by the bot
+8. Use commands in any channel or the channel selected when creating webhook
 
 ## Getting started Rocket.chat
 
@@ -56,7 +56,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 	npm install
 	```
 
-3. Add Outgoing WebHook Integration to Rocket.chat `url: http://localhost:8080/rocketchat`
+3. Add Outgoing WebHook Integration to Rocket.chat url `http://localhost:8080/rocketchat`
 
 4. Edit app/config.example.js and rename to app/config.js
 
@@ -71,7 +71,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 6. Run ```node index.js``` (or use something like pm2)
 
-7. Use commands in any channel
+7. Use commands in any channel or the channel selected when creating webhook
 
 ## Commands
 - ```speed help``` shows explanations

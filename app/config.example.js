@@ -12,9 +12,7 @@ var config = {
 	},
 	slack: {
 		enabled: true,
-		token: 'xoxb-TOKEN',
-		name: 'Speed Monitor',
-		channel: 'general'
+		token: 'TOKEN'
 	},
 	rocketchat: {
 		enabled: false,
