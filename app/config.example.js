@@ -18,6 +18,7 @@ var config = {
 	},
 	rocketchat: {
 		enabled: false,
+		token: 'TOKEN'
 	},
 	db: 'mongodb://username:password@host:port/database'
 };
