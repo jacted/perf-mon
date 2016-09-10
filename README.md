@@ -73,6 +73,33 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 7. Use commands in any channel or the channel selected when creating webhook
 
+## Getting starter Mattermost
+
+1. Clone repository
+
+2. Use npm to install dependencies:
+
+	```
+	npm install
+	```
+
+3. Add Outgoing WebHook Integration to Mattermost url `http://localhost:8080/mattermost` - Add `speed` to trigger word(s)
+
+4. Edit app/config.example.js and rename to app/config.js
+
+5. Insert script tags at the bottom of your website right before ```</body>```
+
+	```
+	<script type="text/javascript">
+		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
+	</script>
+	<script type="text/javascript" src="http://localhost:8080/speedmonitor.js" defer></script>
+	```
+
+6. Run ```node index.js``` (or use something like pm2)
+
+7. Use commands in any channel or the channel selected when creating webhook
+
 ## Commands
 - ```speed help``` shows explanations
 - ```speed report ALIAS``` shows report

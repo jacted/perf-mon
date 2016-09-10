@@ -14,11 +14,12 @@ var config = {
 		port: process.env.PORT || 8080
 	},
 	slack: {
-		enabled: true,
 		token: 'TOKEN'
 	},
 	rocketchat: {
-		enabled: true,
+		token: 'TOKEN'
+	},
+	mattermost: {
 		token: 'TOKEN'
 	},
 	db: 'mongodb://username:password@host:port/database'

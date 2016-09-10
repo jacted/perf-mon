@@ -6,7 +6,7 @@ var config = require('../config'),
 
 module.exports = function(app){
 
-	app.post(['/rocketchat', '/slack'], function (req, res) {
+	app.post(['/rocketchat', '/slack', '/mattermost'], function (req, res) {
 
 		// Path
 		let path = req._parsedUrl.pathname;
@@ -18,7 +18,7 @@ module.exports = function(app){
 		} else if(path == "/slack") {
 			token = config.slack.token;
 		} else {
-
+			token = config.mattermost.token;
 		}
 
 		// Check token
