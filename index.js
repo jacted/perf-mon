@@ -7,7 +7,6 @@ var express 	= require('express'),
 	bodyParser 	= require('body-parser'),
 	cors 		= require('cors'),
 	mongoose   	= require('mongoose'),
-	CronJob 	= require('cron').CronJob,
 	config 		= require('./app/config')
 
 // Setup Mongoose 
@@ -43,12 +42,6 @@ if(config.rocketchat.enabled) {
 // Log post
 // ====================================================
 require('./app/routes/log')(app);
-
-// Setup cronjob (00:08:00)
-// ====================================================
-new CronJob('00 08 00 * * *', function() {
-  
-}, null, true, config.date.timezone);
 
 // Start server
 // ====================================================
