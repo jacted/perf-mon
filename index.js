@@ -27,19 +27,11 @@ app.use(bodyParser.json());
 // ====================================================
 app.use(express.static('script'));
 
-// Setup Slack Bot
+// Hook
 // ====================================================
-if(config.slack.enabled) {
-	require('./app/routes/slack')(app);
-}
+require('./app/routes/hook')(app);
 
-// Rocket chat
-// ====================================================
-if(config.rocketchat.enabled) {
-	require('./app/routes/rocketchat')(app);
-}
-
-// Log post
+// Log post route
 // ====================================================
 require('./app/routes/log')(app);
 

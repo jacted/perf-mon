@@ -6,10 +6,23 @@ var config = require('../config'),
 
 module.exports = function(app){
 
-	app.post('/rocketchat', function (req, res) {
+	app.post(['/rocketchat', '/slack'], function (req, res) {
+
+		// Path
+		let path = req._parsedUrl.pathname;
+
+		// Token to check
+		let token;
+		if(path == "/rocketchat") {
+			token = config.rocketchat.token;
+		} else if(path == "/slack") {
+			token = config.slack.token;
+		} else {
+
+		}
 
 		// Check token
-		if(req.body.token == config.rocketchat.token) {
+		if(req.body.token == token) {
 
 			// IF is not a bot
 			if(!req.body.bot) {
