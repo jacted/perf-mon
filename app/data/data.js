@@ -1,8 +1,6 @@
 'use strict'
 
-var Log     = require('../models/log'),
- 	config  = require('../config'); 
-
+var Log = require('../models/log'); 
 
 var getLogData = (domain) => {
 

@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha tests --recursive",
+    "test:watch": "mocha tests --recursive --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacted/perf-mon.git"
@@ -19,5 +22,10 @@
     "cors": "^2.8.0",
     "express": "^4.14.0",
     "mongoose": "^4.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0"
   }
 }
