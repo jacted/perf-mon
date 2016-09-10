@@ -75,12 +75,12 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 ## Commands
 - ```speed help``` shows explanations
-- ```speed report``` shows report
-- ```speed report full``` shows extended report
+- ```speed report ALIAS``` shows report
+- ```speed report full ALIAS``` shows extended report
 
 ## ToDo
 
-- [ ] Multiple domain support
+- [X] Multiple domain support
 - [ ] Clean up code
 
 ## Browser support
