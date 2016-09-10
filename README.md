@@ -1,6 +1,6 @@
 ## Speed Monitor
 
-- Website user performance reports for slack and Rocket.chat
+- Website user performance reports for Slack, Rocket.chat & Mattermost
 - Captures performance stats using ```performance.timing``` 
 - This is NOT a NodeJS package.
 
@@ -8,7 +8,7 @@
 
 The script captures the users performance using ```performance.timing```
 
-It then sends it to a NodeJS server, storing it in MongoDB and sends reports to slack or Rocket.chat about the performance.
+It then sends it to a NodeJS server, storing it in MongoDB and sends reports to Slack, Rocket.chat or Mattermost about the performance.
 
 ![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot1.png)
 
