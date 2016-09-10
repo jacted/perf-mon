@@ -4,9 +4,12 @@ var config = {
 	date: {
 		timezone: 'Europe/Berlin'
 	},
-	stats: {
-		domain: 'localhost'
-	},
+	domains: [
+		{
+			alias: 'localhost',
+			domain: 'localhost.com'
+		}
+	],
 	web: {
 		port: process.env.PORT || 8080
 	},
@@ -15,7 +18,7 @@ var config = {
 		token: 'TOKEN'
 	},
 	rocketchat: {
-		enabled: false,
+		enabled: true,
 		token: 'TOKEN'
 	},
 	db: 'mongodb://username:password@host:port/database'

@@ -4,14 +4,14 @@ var Log     = require('../models/log'),
  	config  = require('../config'); 
 
 
-var getLogData = () => {
+var getLogData = (domain) => {
 
 	return new Promise(function(resolve, reject) {
 
 		Log
 		.find({
 			"created": { $gt: new Date(Date.now() - 24*60*60 * 1000) },
-			"hostname": config.stats.domain
+			"hostname": domain
 		})
 		.exec((err, logs) => {
 
@@ -129,10 +129,10 @@ var getLogData = () => {
 
 } 
 
-var getPerfMessageData = (final, logsLength, full) => {
+var getPerfMessageData = (domain, final, logsLength, full) => {
 
 	// Msg Text
-	let msgText = 'The average load time of '+config.stats.domain+' in the last 24 hours was '+final.load_time.avg+' sampled from '+logsLength+' users. The fastest was '+final.load_time.min+', the slowest was '+final.load_time.max+'.';
+	let msgText = 'The average load time of '+domain+' in the last 24 hours was '+final.load_time.avg+' sampled from '+logsLength+' users. The fastest was '+final.load_time.min+', the slowest was '+final.load_time.max+'.';
 
 	// Bot params
 	var params = {
@@ -141,7 +141,7 @@ var getPerfMessageData = (final, logsLength, full) => {
 			{
 				"fallback": msgText, 
 				"color": "#36a64f",
-				"title": "Performance report for "+config.stats.domain,
+				"title": "Performance report for "+domain,
 				"text": msgText,
 				"fields": [
 					{
