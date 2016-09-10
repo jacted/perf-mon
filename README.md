@@ -107,11 +107,6 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 You can skip the ALIAS if you only have 1 domain setup
 
-## ToDo
-
-- [X] Multiple domain support
-- [ ] Clean up code
-
 ## Browser support
 
 Any browser that supports `performance.timing()`! Chrome, Firefox, Safari 9.2+, Edge, IE 9+, Android Browser 4.4, UC Browser.
@@ -121,6 +116,12 @@ See [caniuse.com](http://caniuse.com/#feat=nav-timing) for full support.
 ## Screenshots
 
 ![Screenshot](https://raw.githubusercontent.com/jacted/speed-monitor/master/example/screenshot2.png)
+
+## ToDo
+
+- [X] Multiple domain support
+- [ ] Add tests
+- [ ] Clean up code
 
 ## License
 The MIT License (MIT)
