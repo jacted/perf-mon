@@ -3,10 +3,13 @@
 var config = require('./config'); 
 
 var getDomainByAlias = (command, text) => {
+    let domains = config.domains;
+    if(domains.length == 1) {
+        return domains[0].domain;
+    }
     let alias = text.replace(command, '').trim();
-    let domains = config.domains
     for (var i = 0; i < domains.length; i++) {
-        if(domains[i].alias == alias) return domains[i].domain
+        if(domains[i].alias == alias) return domains[i].domain;
     }
     return false
 }

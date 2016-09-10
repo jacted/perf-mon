@@ -105,6 +105,8 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 - ```speed report ALIAS``` shows report
 - ```speed report full ALIAS``` shows extended report
 
+You can skip the ALIAS if you only have 1 domain setup
+
 ## ToDo
 
 - [X] Multiple domain support
