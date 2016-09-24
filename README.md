@@ -73,7 +73,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 7. Use commands in any channel or the channel selected when creating webhook
 
-## Getting starter Mattermost
+## Getting started Mattermost
 
 1. Clone repository
 
