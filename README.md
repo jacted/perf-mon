@@ -35,7 +35,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 6. Insert script tags at the bottom of your website right before ```</body>```
 
-	```
+	```html
 	<script type="text/javascript">
 		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
 	</script>
@@ -62,7 +62,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 5. Insert script tags at the bottom of your website right before ```</body>```
 
-	```
+	```html
 	<script type="text/javascript">
 		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
 	</script>
@@ -89,7 +89,7 @@ It then sends it to a NodeJS server, storing it in MongoDB and sends reports to 
 
 5. Insert script tags at the bottom of your website right before ```</body>```
 
-	```
+	```html
 	<script type="text/javascript">
 		var speedmonitorUxMonitorBeaconUrl = 'http://localhost:8080/log';
 	</script>
